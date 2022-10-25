@@ -43,19 +43,19 @@ for i in input:
     if(i.find("Card value: 1.00 EGP ") != -1):
         input.remove(i)
 
-haunt = ""
+shreyansh = ""
 
 for i in input:
     if(i.find("Card number: ") != -1):
-        haunt = haunt + i.replace("Card number: ", "").replace("\n", "")
+        shreyansh = shreyansh + i.replace("Card number: ", "").replace("\n", "")
     if(i.find("Exp Date: ") != -1):
-        haunt = haunt + ":" + i.replace("Exp Date: ", "").replace("\n", "")
+        shreyansh = shreyansh + ":" + i.replace("Exp Date: ", "").replace("\n", "")
     if(i.find("CVC: ") != -1):
-        haunt = haunt + ":" + i.replace("CVC: ", "")
+        shreyansh = shreyansh + ":" + i.replace("CVC: ", "")
 
-haunt = haunt.replace(" ", "").replace("/", "")
+shreyansh = shreyansh.replace(" ", "").replace("/", "")
 with open("output.txt", "w", encoding="utf-8") as f:
-    f.write(haunt)
+    f.write(shreyansh)
     f.close
 
 print(f"Finished..!!")
